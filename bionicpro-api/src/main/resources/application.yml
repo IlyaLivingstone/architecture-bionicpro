@@ -1,0 +1,27 @@
+server:
+  port: ${SERVER_PORT:8000}
+
+bionicpro:
+  api:
+    frontend-url: ${FRONTEND_URL:http://localhost:3000}
+    auth:
+      # Проверка серверной сессии выполняется в сервисе аутентификации.
+      base-url: ${AUTH_SERVICE_URL:http://bionicpro-auth:8081}
+      internal-token: ${INTERNAL_TOKEN:bionicpro-internal-token}
+    clickhouse:
+      url: ${CLICKHOUSE_URL:http://clickhouse:8123}
+      database: ${CLICKHOUSE_DB:reports}
+      user: ${CLICKHOUSE_USER:default}
+      password: ${CLICKHOUSE_PASSWORD:}
+    storage:
+      # Объектное хранилище отчётов (S3 API) и CDN перед ним.
+      endpoint: ${S3_ENDPOINT:http://minio:9000}
+      access-key: ${S3_ACCESS_KEY:minio_user}
+      secret-key: ${S3_SECRET_KEY:minio_password}
+      bucket: ${S3_BUCKET:bionicpro-reports}
+      cdn-url: ${CDN_URL:http://localhost:8082}
+      presign-ttl-seconds: ${S3_PRESIGN_TTL:3600}
+
+logging:
+  level:
+    ru.bionicpro: INFO

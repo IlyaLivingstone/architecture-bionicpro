@@ -1,0 +1,140 @@
+<mxfile host="Electron" agent="Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/131.0.0.0 Safari/537.36">
+  <diagram name="BionicPRO_C4_reports" id="bionicpro-reports-1">
+    <mxGraphModel dx="1837" dy="1320" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="1600" pageHeight="1420" math="0" shadow="0">
+      <root>
+        <mxCell id="0" />
+        <mxCell id="1" parent="0" />
+        <object placeholders="1" c4Name="BionicPRO" c4Type="SystemScopeBoundary" c4Application="Software System" label="&lt;font style=&quot;font-size: 16px&quot;&gt;&lt;b&gt;&lt;div style=&quot;text-align: left&quot;&gt;%c4Name%&lt;/div&gt;&lt;/b&gt;&lt;/font&gt;&lt;div style=&quot;text-align: left&quot;&gt;[%c4Application%]&lt;/div&gt;" id="bnd">
+          <mxCell parent="1" style="rounded=0;fontSize=11;whiteSpace=wrap;html=1;dashed=1;arcSize=20;fillColor=none;strokeColor=#666666;fontColor=#333333;labelBackgroundColor=none;align=left;verticalAlign=bottom;labelBorderColor=none;spacingTop=0;spacing=10;dashPattern=8 4;metaEdit=1;rotatable=0;perimeter=rectanglePerimeter;noLabel=0;labelPadding=0;allowArrows=0;connectable=0;expand=0;recursiveResize=0;" vertex="1">
+            <mxGeometry height="1000" width="1080" x="420" y="20" as="geometry" />
+          </mxCell>
+        </object>
+        <object placeholders="1" c4Name="База данных" c4Type="Container" c4Technology="PostgreSQL" c4Description="Телеметрия протезов: движения, время отклика, заряд, ошибки" label="&lt;font style=&quot;font-size: 16px&quot;&gt;&lt;b&gt;%c4Name%&lt;/b&gt;&lt;/font&gt;&lt;div&gt;[%c4Type%:&amp;nbsp;%c4Technology%]&lt;/div&gt;&lt;br&gt;&lt;div&gt;&lt;font style=&quot;font-size: 11px&quot;&gt;&lt;font color=&quot;#E6E6E6&quot;&gt;%c4Description%&lt;/font&gt;&lt;/div&gt;" id="telemetry-db">
+          <mxCell parent="1" style="shape=cylinder3;size=15;whiteSpace=wrap;html=1;boundedLbl=1;rounded=0;labelBackgroundColor=none;fillColor=#23A2D9;fontSize=12;fontColor=#ffffff;align=center;strokeColor=#0E7DAD;metaEdit=1;" vertex="1">
+            <mxGeometry height="130" width="240" x="460" y="80" as="geometry" />
+          </mxCell>
+        </object>
+        <object placeholders="1" c4Name="CRM" c4Type="Container" c4Technology="Битрикс24" c4Description="Клиенты и модели протезов" label="&lt;font style=&quot;font-size: 16px&quot;&gt;&lt;b&gt;%c4Name%&lt;/b&gt;&lt;/font&gt;&lt;div&gt;[%c4Type%:&amp;nbsp;%c4Technology%]&lt;/div&gt;&lt;br&gt;&lt;div&gt;&lt;font style=&quot;font-size: 11px&quot;&gt;&lt;font color=&quot;#E6E6E6&quot;&gt;%c4Description%&lt;/font&gt;&lt;/div&gt;" id="crm">
+          <mxCell parent="1" style="rounded=0;whiteSpace=wrap;html=1;fontSize=11;labelBackgroundColor=none;fillColor=#23A2D9;fontColor=#ffffff;align=center;arcSize=10;strokeColor=#0E7DAD;metaEdit=1;resizable=0;" vertex="1">
+            <mxGeometry height="120" width="220" x="820" y="80" as="geometry" />
+          </mxCell>
+        </object>
+        <object placeholders="1" c4Name="CRM DB" c4Type="Container" c4Technology="Oracle Database" c4Description="Данные CRM" label="&lt;font style=&quot;font-size: 16px&quot;&gt;&lt;b&gt;%c4Name%&lt;/b&gt;&lt;/font&gt;&lt;div&gt;[%c4Type%:&amp;nbsp;%c4Technology%]&lt;/div&gt;&lt;br&gt;&lt;div&gt;&lt;font style=&quot;font-size: 11px&quot;&gt;&lt;font color=&quot;#E6E6E6&quot;&gt;%c4Description%&lt;/font&gt;&lt;/div&gt;" id="crm-db">
+          <mxCell parent="1" style="shape=cylinder3;size=15;whiteSpace=wrap;html=1;boundedLbl=1;rounded=0;labelBackgroundColor=none;fillColor=#23A2D9;fontSize=12;fontColor=#ffffff;align=center;strokeColor=#0E7DAD;metaEdit=1;" vertex="1">
+            <mxGeometry height="120" width="220" x="1140" y="80" as="geometry" />
+          </mxCell>
+        </object>
+        <object placeholders="1" c4Name="Airflow" c4Type="Container" c4Technology="Apache Airflow" c4Description="ETL по расписанию: объединяет телеметрию и данные CRM и перезаписывает витрину за окно 30 дней" label="&lt;font style=&quot;font-size: 16px&quot;&gt;&lt;b&gt;%c4Name%&lt;/b&gt;&lt;/font&gt;&lt;div&gt;[%c4Type%:&amp;nbsp;%c4Technology%]&lt;/div&gt;&lt;br&gt;&lt;div&gt;&lt;font style=&quot;font-size: 11px&quot;&gt;&lt;font color=&quot;#E6E6E6&quot;&gt;%c4Description%&lt;/font&gt;&lt;/div&gt;" id="airflow">
+          <mxCell parent="1" style="rounded=0;whiteSpace=wrap;html=1;fontSize=11;labelBackgroundColor=none;fillColor=#1D7FBF;fontColor=#ffffff;align=center;arcSize=10;strokeColor=#0B5C82;metaEdit=1;resizable=0;" vertex="1">
+            <mxGeometry height="150" width="260" x="820" y="300" as="geometry" />
+          </mxCell>
+        </object>
+        <object placeholders="1" c4Name="bionicpro-auth" c4Type="Container" c4Technology="Java 21, Spring Boot" c4Description="Проверка серверной сессии для сервиса отчётов" label="&lt;font style=&quot;font-size: 16px&quot;&gt;&lt;b&gt;%c4Name%&lt;/b&gt;&lt;/font&gt;&lt;div&gt;[%c4Type%:&amp;nbsp;%c4Technology%]&lt;/div&gt;&lt;br&gt;&lt;div&gt;&lt;font style=&quot;font-size: 11px&quot;&gt;&lt;font color=&quot;#E6E6E6&quot;&gt;%c4Description%&lt;/font&gt;&lt;/div&gt;" id="auth">
+          <mxCell parent="1" style="rounded=0;whiteSpace=wrap;html=1;fontSize=11;labelBackgroundColor=none;fillColor=#23A2D9;fontColor=#ffffff;align=center;arcSize=10;strokeColor=#0E7DAD;metaEdit=1;resizable=0;" vertex="1">
+            <mxGeometry height="140" width="260" x="460" y="560" as="geometry" />
+          </mxCell>
+        </object>
+        <object placeholders="1" c4Name="ClickHouse" c4Type="Container" c4Technology="OLAP" c4Description="Витрина reports.user_daily_usage: строка на пользователя и день, ключ сортировки (login, report_date)" label="&lt;font style=&quot;font-size: 16px&quot;&gt;&lt;b&gt;%c4Name%&lt;/b&gt;&lt;/font&gt;&lt;div&gt;[%c4Type%:&amp;nbsp;%c4Technology%]&lt;/div&gt;&lt;br&gt;&lt;div&gt;&lt;font style=&quot;font-size: 11px&quot;&gt;&lt;font color=&quot;#E6E6E6&quot;&gt;%c4Description%&lt;/font&gt;&lt;/div&gt;" id="clickhouse">
+          <mxCell parent="1" style="rounded=0;whiteSpace=wrap;html=1;fontSize=11;labelBackgroundColor=none;fillColor=#1D7FBF;fontColor=#ffffff;align=center;arcSize=10;strokeColor=#0B5C82;metaEdit=1;resizable=0;" vertex="1">
+            <mxGeometry height="150" width="260" x="820" y="560" as="geometry" />
+          </mxCell>
+        </object>
+        <object placeholders="1" c4Name="Веб-приложение" c4Type="Container" c4Technology="React SPA" c4Description="Кнопка «Download Report»: запрашивает отчёт у сервиса API, токенов не хранит" label="&lt;font style=&quot;font-size: 16px&quot;&gt;&lt;b&gt;%c4Name%&lt;/b&gt;&lt;/font&gt;&lt;div&gt;[%c4Type%:&amp;nbsp;%c4Technology%]&lt;/div&gt;&lt;br&gt;&lt;div&gt;&lt;font style=&quot;font-size: 11px&quot;&gt;&lt;font color=&quot;#E6E6E6&quot;&gt;%c4Description%&lt;/font&gt;&lt;/div&gt;" id="reports-web">
+          <mxCell parent="1" style="rounded=0;whiteSpace=wrap;html=1;fontSize=11;labelBackgroundColor=none;fillColor=#23A2D9;fontColor=#ffffff;align=center;arcSize=10;strokeColor=#0E7DAD;metaEdit=1;resizable=0;" vertex="1">
+            <mxGeometry height="130" width="260" x="460" y="780" as="geometry" />
+          </mxCell>
+        </object>
+        <object placeholders="1" c4Name="bionicpro-api" c4Type="Container" c4Technology="Java 21, Spring Boot" c4Description="/reports: отдаёт отчёт текущего пользователя из витрины, вычислений на лету нет" label="&lt;font style=&quot;font-size: 16px&quot;&gt;&lt;b&gt;%c4Name%&lt;/b&gt;&lt;/font&gt;&lt;div&gt;[%c4Type%:&amp;nbsp;%c4Technology%]&lt;/div&gt;&lt;br&gt;&lt;div&gt;&lt;font style=&quot;font-size: 11px&quot;&gt;&lt;font color=&quot;#E6E6E6&quot;&gt;%c4Description%&lt;/font&gt;&lt;/div&gt;" id="reports-api">
+          <mxCell parent="1" style="rounded=0;whiteSpace=wrap;html=1;fontSize=11;labelBackgroundColor=none;fillColor=#1D7FBF;fontColor=#ffffff;align=center;arcSize=10;strokeColor=#0B5C82;metaEdit=1;resizable=0;" vertex="1">
+            <mxGeometry height="150" width="260" x="820" y="780" as="geometry" />
+          </mxCell>
+        </object>
+        <object placeholders="1" c4Name="Пилот протеза" c4Type="Person" c4Technology="" c4Description="Хочет получать отчёт о работе своего протеза" label="&lt;font style=&quot;font-size: 16px&quot;&gt;&lt;b&gt;%c4Name%&lt;/b&gt;&lt;/font&gt;&lt;div&gt;[%c4Type%]&lt;/div&gt;&lt;br&gt;&lt;div&gt;&lt;font style=&quot;font-size: 11px&quot;&gt;&lt;font color=&quot;#cccccc&quot;&gt;%c4Description%&lt;/font&gt;&lt;/div&gt;" id="pilot">
+          <mxCell parent="1" style="html=1;fontSize=11;dashed=0;whiteSpace=wrap;fillColor=#6C6477;strokeColor=#4D4D4D;fontColor=#ffffff;shape=mxgraph.c4.person2;align=center;metaEdit=1;resizable=0;rounded=0;" vertex="1">
+            <mxGeometry height="180" width="200" x="120" y="780" as="geometry" />
+          </mxCell>
+        </object>
+        <object placeholders="1" c4Name="Keycloak" c4Type="Container" c4Technology="reports-realm" c4Description="Удостоверяющая служба: вход пользователя" label="&lt;font style=&quot;font-size: 16px&quot;&gt;&lt;b&gt;%c4Name%&lt;/b&gt;&lt;/font&gt;&lt;div&gt;[%c4Type%:&amp;nbsp;%c4Technology%]&lt;/div&gt;&lt;br&gt;&lt;div&gt;&lt;font style=&quot;font-size: 11px&quot;&gt;&lt;font color=&quot;#E6E6E6&quot;&gt;%c4Description%&lt;/font&gt;&lt;/div&gt;" id="keycloak">
+          <mxCell parent="1" style="rounded=0;whiteSpace=wrap;html=1;fontSize=11;labelBackgroundColor=none;fillColor=#8C8496;fontColor=#ffffff;align=center;arcSize=10;strokeColor=#736782;metaEdit=1;resizable=0;" vertex="1">
+            <mxGeometry height="140" width="240" x="120" y="560" as="geometry" />
+          </mxCell>
+        </object>
+        <mxCell id="e-telemetry-airflow" edge="1" parent="1" source="telemetry-db" style="rounded=0;orthogonalLoop=1;jettySize=auto;html=1;" target="airflow">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="e-telemetry-airflow-label" connectable="0" parent="e-telemetry-airflow" style="edgeLabel;html=1;align=center;verticalAlign=middle;resizable=0;points=[];rounded=0;" value="Телеметрия протезов" vertex="1">
+          <mxGeometry relative="1" as="geometry">
+            <mxPoint y="-14" as="offset" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="e-crm-crmdb" edge="1" parent="1" source="crm" style="rounded=0;orthogonalLoop=1;jettySize=auto;html=1;" target="crm-db">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="e-crm-crmdb-label" connectable="0" parent="e-crm-crmdb" style="edgeLabel;html=1;align=center;verticalAlign=middle;resizable=0;points=[];rounded=0;" value="Данные клиентов" vertex="1">
+          <mxGeometry relative="1" as="geometry">
+            <mxPoint y="-14" as="offset" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="e-crmdb-airflow" edge="1" parent="1" source="crm-db" style="rounded=0;orthogonalLoop=1;jettySize=auto;html=1;" target="airflow">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="e-crmdb-airflow-label" connectable="0" parent="e-crmdb-airflow" style="edgeLabel;html=1;align=center;verticalAlign=middle;resizable=0;points=[];rounded=0;" value="Данные о клиентах" vertex="1">
+          <mxGeometry relative="1" as="geometry">
+            <mxPoint x="14" as="offset" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="e-airflow-clickhouse" edge="1" parent="1" source="airflow" style="rounded=0;orthogonalLoop=1;jettySize=auto;html=1;" target="clickhouse">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="e-airflow-clickhouse-label" connectable="0" parent="e-airflow-clickhouse" style="edgeLabel;html=1;align=center;verticalAlign=middle;resizable=0;points=[];rounded=0;" value="Загрузка витрины по расписанию" vertex="1">
+          <mxGeometry relative="1" as="geometry">
+            <mxPoint x="14" as="offset" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="e-api-clickhouse" edge="1" parent="1" source="reports-api" style="rounded=0;orthogonalLoop=1;jettySize=auto;html=1;" target="clickhouse">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="e-api-clickhouse-label" connectable="0" parent="e-api-clickhouse" style="edgeLabel;html=1;align=center;verticalAlign=middle;resizable=0;points=[];rounded=0;" value="SQL-запрос к витрине" vertex="1">
+          <mxGeometry relative="1" as="geometry">
+            <mxPoint x="14" as="offset" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="e-api-auth" edge="1" parent="1" source="reports-api" style="rounded=0;orthogonalLoop=1;jettySize=auto;html=1;" target="auth">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="e-api-auth-label" connectable="0" parent="e-api-auth" style="edgeLabel;html=1;align=center;verticalAlign=middle;resizable=0;points=[];rounded=0;" value="Проверка сессии" vertex="1">
+          <mxGeometry relative="1" as="geometry">
+            <mxPoint x="-14" as="offset" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="e-web-api" edge="1" parent="1" source="reports-web" style="rounded=0;orthogonalLoop=1;jettySize=auto;html=1;" target="reports-api">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="e-web-api-label" connectable="0" parent="e-web-api" style="edgeLabel;html=1;align=center;verticalAlign=middle;resizable=0;points=[];rounded=0;" value="GET /reports с cookie сессии" vertex="1">
+          <mxGeometry relative="1" as="geometry">
+            <mxPoint y="-60" as="offset" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="e-pilot-web" edge="1" parent="1" source="pilot" style="rounded=0;orthogonalLoop=1;jettySize=auto;html=1;" target="reports-web">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="e-pilot-web-label" connectable="0" parent="e-pilot-web" style="edgeLabel;html=1;align=center;verticalAlign=middle;resizable=0;points=[];rounded=0;" value="Скачивает отчёт" vertex="1">
+          <mxGeometry relative="1" as="geometry">
+            <mxPoint y="-14" as="offset" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="e-auth-keycloak" edge="1" parent="1" source="auth" style="rounded=0;orthogonalLoop=1;jettySize=auto;html=1;dashed=1;" target="keycloak">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="e-auth-keycloak-label" connectable="0" parent="e-auth-keycloak" style="edgeLabel;html=1;align=center;verticalAlign=middle;resizable=0;points=[];rounded=0;" value="PKCE-вход" vertex="1">
+          <mxGeometry relative="1" as="geometry">
+            <mxPoint y="-14" as="offset" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="note-rules" parent="1" style="rounded=0;whiteSpace=wrap;html=1;fillColor=#FFF9B2;strokeColor=#D6B656;align=left;verticalAlign=top;spacing=10;fontSize=12;" value="&lt;b&gt;Как устроен контур отчётности&lt;/b&gt;&lt;br&gt;&lt;br&gt;1. Airflow по расписанию собирает телеметрию протезов и данные клиентов CRM и перезаписывает витрину в ClickHouse.&lt;br&gt;&lt;br&gt;2. Сервис отчётов ничего не считает на лету: он читает готовую витрину по ключу (login, report_date).&lt;br&gt;&lt;br&gt;3. Пользователь берётся из серверной сессии, а не из параметров запроса, — чужой отчёт получить нельзя.&lt;br&gt;&lt;br&gt;4. Если период ещё не обработан ETL, сервис отвечает 409 и сообщает, по какую дату данные готовы." vertex="1">
+          <mxGeometry height="280" width="700" x="780" y="1040" as="geometry" />
+        </mxCell>
+      </root>
+    </mxGraphModel>
+  </diagram>
+</mxfile>
