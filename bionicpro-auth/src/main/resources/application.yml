@@ -1,0 +1,51 @@
+server:
+  port: ${SERVER_PORT:8081}
+  servlet:
+    session:
+      cookie:
+        http-only: true
+        secure: true
+        same-site: lax
+
+spring:
+  application:
+    name: bionicpro-auth
+  datasource:
+    url: ${SPRING_DATASOURCE_URL:jdbc:postgresql://localhost:5434/bionicpro_auth}
+    username: ${SPRING_DATASOURCE_USERNAME:bionicpro}
+    password: ${SPRING_DATASOURCE_PASSWORD:bionicpro}
+  jpa:
+    hibernate:
+      ddl-auto: none
+    open-in-view: false
+  sql:
+    init:
+      mode: always
+  data:
+    redis:
+      host: ${SPRING_DATA_REDIS_HOST:localhost}
+      port: ${SPRING_DATA_REDIS_PORT:6379}
+
+bionicpro:
+  auth:
+    frontend-url: ${FRONTEND_URL:http://localhost:3000}
+    keycloak:
+      base-url: ${KEYCLOAK_BASE_URL:http://localhost:8080}
+      public-url: ${KEYCLOAK_PUBLIC_URL:http://localhost:8080}
+      realm: ${KEYCLOAK_REALM:reports-realm}
+      client-id: ${KEYCLOAK_CLIENT_ID:reports-frontend}
+      client-secret: ${KEYCLOAK_CLIENT_SECRET:}
+      admin-client-id: ${KEYCLOAK_ADMIN_CLIENT_ID:bionicpro-auth}
+      admin-client-secret: ${KEYCLOAK_ADMIN_CLIENT_SECRET:auth-service-secret-change-me}
+    session:
+      ttl-seconds: ${SESSION_TTL_SECONDS:1800}
+      cookie-name: ${SESSION_COOKIE_NAME:BIONICPRO_SESSION}
+      cookie-secure: ${SESSION_COOKIE_SECURE:true}
+    token-encryption-key: ${TOKEN_ENCRYPTION_KEY:MDEyMzQ1Njc4OWFiY2RlZjAxMjM0NTY3ODlhYmNkZWY=}
+    internal-token: ${INTERNAL_TOKEN:bionicpro-internal-token}
+    yandex:
+      profile-url: ${YANDEX_PROFILE_URL:https://login.yandex.ru/info?format=json}
+
+logging:
+  level:
+    ru.bionicpro: INFO
